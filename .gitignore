@@ -3,3 +3,14 @@
 *.log
 *.aux
 *.synctex.gz
+*.nav
+*.out
+*.snm
+./charla/*.fdb_latexm
+./charla/*.fls
+./charla/*.log
+./charla/*.aux
+./charla/*.synctex.gz
+./charla/*.nav
+./charla/*.out
+./charla/.*snm

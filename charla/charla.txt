@@ -1,0 +1,120 @@
+*1)Titulo
+Hola a todos, mi nombre es Diego Lloveras. Estoy haciendo el doctorado en el IAFE, en el grupo de física solar y hoy les voy a contar parte del trabajo que estamos haciendo con Alberto Vasquez, Federico Nuevo, tambien del iafe, en un marco de colaboracion con el grupo de fisica espacial de la universidad de Michigan, en particular: sachdeva, manchester, van der holst y frazin.
+
+Nos encontramos en este momento transitando un mínimo de actividad solar. Durante estos períodos, el sol se encuentra en su estado mas relajado y simple, y nos ofrece una muy buena oportunidad para estudiar y entender a gran escala la relacion sol-tierra. En este contexto se lleva a cabo la campaña de colaboracion (Interacciones planetarias y heliosfera completas, WHPI por sus siglas en ingles) que apunta a nuclear y compartir modelos y observaciones del sistema sol-heliosfera. Dentro de este marco utilizamos una reconstruccion tomografica y un modelado MHD para determinar propiedades del viento solar rapido y lento en la baja corona.
+*2)Relacion Sol-Tierra
+Nos encontramos en una era espacial, por lo tanto la observación y el modelado de la Corona solar resultan de gran relevancia para el entendimiento y por lo tanto la  prediccion del clima espacial, ya que en la Corona es donde el viento solar es calentado, acelerado y ademas tienen lugar eventos impulsivos como CMEs que afectan directamente al medio interplanetario y en particular pueden afectar el campo geomagnetico terrestre.
+
+*3)Corona Solar
+La corona es la parte mas externa de la atmósfera solar. Esta compuesta por plasma y se extiende desde la cromosfera hasta el medio interplanetario. Este plasma se encuentra gobernado por el campo magnetico solar que es generado por efecto dínamo y los movimientos convectivos en el interior del sol.
+
+A medida que nos alejamos de la cromosfera hacia el medio interplanetario, pasamos por la region de transicion que es una irregular y delgada region donde la temparatura del plasma aumenta dos ordenes de magnitud y la densidad decae dos ordenes. De esta forma en la corona nos encontramos con temperaturas y densidades de estos ordenes.
+
+La baja corona (1-1.3Rs) es opticamente delgada y emite eficientemente en el rango EUV. 
+
+*4)Ulysses
+En un minimo de actividad las lineas magneticas lucen de esta forma, como un dipolo. En negro se indican las lineas cerradas que conforman el streamer y partiendo de los polos tenemos lineas abiertas. 
+Si uno se aleja lo suficiente del sol solo encontrara SOLO lineas abiertas.
+
+La imagen de la izquiera es parte de una imagen del paper de McComas et al 2000 que muestra, en el fondo, una superposicion de 3 imagenes, donde mas intensidad indica mayor densidad. A esta imagen se le agregaron mediciones in-situ de la primera orbita de Ulysses que incluyen velocidad terminal del viento solar y de densidad (en verde).
+
+Entonces, el plasma en las lineas abiertas se acelera y fluye a traves de ellas hasta alcanzar velocidades terminales. El plasma asociado a lineas con latitudes basales mas polares alcanzan velocidades del orden de 750km/s. Se lo denomina viento solar rapido y se caracteriza por su regimen uniforme, de alta velocidad y baja densidad.
+
+Y a medida que nos acercamos al plano ecuatorial, encontramos viento solar lento que se caracteriza por un regimen no uniforme de baja velocidad y alta densidad, que esta asociado a lineas con latitudes basales mas cercana a los bordes del streamer.
+
+Los mecanismos que generan el viento solar lento son un tema abierto, por ejemplo en este paper de Suess se propusieron varias posibilidades asociadas a inestabilidades hidrodinamicas, desprendimiento de plasma en la cuspide del streamer y flujos continuos en las zonas cercanas al streamer.
+
+Lo que nos propusimos en este trabajo es relacionar para cada una de estas lineas abiertas, la velocidad terminal dada por un modelo MHD con la densidad basal dada por la tomografia.
+*5)Tomografia solar rotacional (tecnica DEMT)
+La tomografia solar rotacional, nos permite determinar propiedades termodinamicas en la baja corona. La tecnica toma una serie temporal de imagenes de una rotacion y permite calcular la emisividad en una grilla 3D, luego calculamos la medida de emision diferencial en cada una de esas celdas y finalmente obtenemos densidad y temperatura en una grilla 3D.
+
+Quien este interesado en los detalles de la tecnica se pueden referir a estos dos papers.
+
+*6)Temp 
+El instrumento que estamos usando es AIA a bordo de SDO, tiene 4 bandas con distinta sentividad termica que van desde medio millon hasta 4 millones de grados.
+
+La tomografia se basa principalmente en dos pasos:
+Primero, tomando como dato la intensidad en cada pixel de una serie temporal de imagenes y conociendo la geometria de la lineas de vision que le corresponde a cada pixel, se puede calcular la emisividad de cada banda en la grilla 3D.
+
+En un segundo paso, teniendo en cuenta la emisividad de todas las banda y la respuesta termica, se propone una funcion gaussiana como distribucion termica y se minimiza en cada celda esta funcion (que se llama medida de emision diferencial local). Luego tomando los momentos de esta funcion obtenemos valores de densidad y temperatura.
+
+Les dejo como referencia el paper de nuevo et la 2015 donde se exploran distintas parametrisaciones para esta funcion.
+
+*7)Resultados tomograficos:
+Una forma de visualizar los resultados tomograficos es mediante mapas de carringotn, que son  mapas de latitud vs longitud (en este caso densidad electronica), arriba en la base de la grilla tomografica y abajo a una altura intermedia. 
+
+Tenemos densidades altas que se corresponden con el streamer y densidades bajas que se corresponden con los agujeros coronales. La LINEA NEGRA marca la separacion entre las lineas magneticas cerradas y abiertas y es obtenida mediante el modelo MHD. Noten la buena concordancia que hay entre la tomografia y el modelo MHD a toda altura.
+
+
+*8)AWSoM
+El modelo MHD que estamos usando es el Modelo solar con ondas de alfven (AWSoM por sus siglas en ingles). Es un modelo MHD 3D que abarca desde la cromosfera hasta 1 UA. Fue desarrollado por el departamento de clima y ciencia espacial en la universidad de michigan, en EEUU.
+
+El calentamiento de la corona solar se aborda al incluir la interacción no lineal de las ondas de Alfvén hacia afuera y contrapropagadas (reflejadas) disipandose y transfiriendo energia en forma de cascada a escalas mas chicas.
+
+Como único dato para el modelado se usan magnetogramas sinópticos, que es el campo magnetico radial a nivel fotosferico. Que luce de esta forma y se ve fuertemente la componente dipolar.
+
+Para que el modelo evolucione, necesita ser validado con observaciones. En el 2019 colaboramos en este paper de Sachdeva en un marco de validacion global del modelo AWSoM.
+
+Y este año publicamos una validacion termodicamica en la baja corona del modelo AWSoM utilizando la tomografia, diferenciando estructuras magneticas y focalizandonos en la region cerrada.
+
+*9) resultados AWSoM
+Aca les muestro mapas latitud-longitud de la componente radial de la velocidad del viento segun AWSoM, a dos alturas. Arriba, a la altura mas baja que ofrece el modelo y abajo a 6 radios solares.
+En el mapa de arriba se muestra en BLANCO la linea que separa lineas de campo abiertas en la zona polar de las cerradas en el streamer. 
+
+A medida que nos vamos hacia alturas mas altas, la region abierta se expande y a 6Rs ya todo corresponde a lineas abierta.
+Podemos ver velocidades mas altas en latitudes mas polares y disminuyen hacia el ecuador llegando a su valor minimo en las latitudes correspondientes a la hoja de corriente. 
+
+Si bien esta no es la velocidad terminal, ya se observa claramente la diferenciacion entre ambas compoentes
+
+*10) perfiles
+Un perfil latitudinal promedio  de la densidad basal y la velocidad lucen asi.
+
+Queremos relacionar estas tendencias latitudinales.
+La FORMA es usando un extrapolacion magnetica que atraviesa la grilla 3D con ambos resultados, de esta forma podemos saber para cada linea abierta la densidad tomografica y su correspondiente velocidad MHD. 
+Si ahora hacemos un grafico de dispersion de estas dos magnitudes  para cada linea tenemos lo siguiente.
+
+*11)grafico de dispersion
+En el eje y la densidad tomografica a 1.025Rs y en el eje X la velocidad radial del viento de AWSom. Para separar los hemisferios multiplicamos la velocidad por el signo del campo magnetico. Entonces del lado positivo tenemos el hemisferio norte y del negativo el sur. La barra de colores indica el módulo de la latitud a 6 Rs.
+
+Tenemos entonces viento solar lento en la zona mas ecuatorial (HCS) con densidades basales relativamente altas y a medida que nos alejamos hacia latitudes mas altas, la densidad decae y la velocidad aumenta. alcanzando las velocidades mas altas en la zona mas polar. EL VS lento es el que posee factor de expansion mas alto y el VS rapido el factor de expansion mas bajo.
+
+La recta negra es un fiteo por cuadrados minimos simplemente a modo de evidenciar mas claramente esta tendencia.
+
+Podriamos decir que determinamos tomograficamente y en forma cuantitativa, por primera vez, las propiedades basales de ambas componentes del viento solar
+
+*12)
+Comentarios finales:
+*La Tomografía Solar Rotacional es actualmente la única técnica observacional que permite generar mapas 3D globales de Ne y Te para validar modelos MHD-3D.
+
+Trazando los resultados pudimos correlacionar las propiedades físicas en la base coronal obtenidas con la tomografia con las componentes rapida/lentas del viento solar dadas por el modelo MHD para cada línea magnéticamente abierta. 
+
+Trabajo futuro:
+*En este momento estamos haciendo nuevas corridas de AWSoM utilizando magnetogramas co-centrados en tiempo con las imag EUV.
+
+*Al momento hemos utilizado los resultados MHD hasta 6R, pero vamos a calcular hasta 20-30Rs donde se alcanzan la spropiedades terminales. 
+
+*Tambien estamos incorporando tomografia usando imagenes de lasco C2 calibradas y compartidas por el laboratorio de astrofísica de Marsella, lo que nos permitira cubrir el rango de densidad entre 2,5 y 6Rs.
+
+
+
+
+
+EXTRAS:
+
+3-
+%La forma que tenemos de obtener ifnromacion es mediante imagenes, que son proyecciones bidimensionales de estructuras tridimensionales que estan emitiendo. Acá es donde entra la tecnica tomografica, que les voy a comentar brevemente en las prox diapositivas.
+
+4-
+%A modo de contexto me gustaria mostrarles brevemente esta imagen la saque del paper de McComas et al 2000. Ellos llevaron a cabo un estudio utilizando datos observacionales (es decir datos in-situ) del plasma del viento solar y campo magnetico obtenidos con la mision Ulysses durante su primer orbita que fue durante el minimo solar alrededor de 1996. A diferencia de la mayoría de las misiones, ésta tiene sus órbitas fuera del plano de la ecliptica, lo cual permite caracterizar el viento solar de alta latitud, es decir mas cercanos a los polos.
+
+%En la imagen de la izqueirda de fondo tenemos un compost de 3 imagenes de la corona solar obtenidas por 3 instrumentos diferentes. La imagen del centro, del disco colar corresponde a emision en EUV, en las prox diapositivas vamos volver a ellas y las 2 posteriores corresponden a coronografos que observan en luz visible, uno de tierra y otro en el espacio 
+
+
+*8)El campo magnético coronal no es medible aún en forma directa ya que la sensibilidad instrumental requerida para una determinación de precisión razonable está aún lejos de alcanzarse. Sin embargo a nivel fotosférico la intensidad del campo magnético es lo suficientemente alta como para que el efecto Zeeman sobre las líneas de emisión provenientes de esa zona sean medibles con precisión. De esta forma el campo magnético es medido por magnetógrafos, los cuales proveen imágenes que describen la variación espacial de la intensidad del campo. A estas imágenes se las denomina magnetogramas.
+Los magnetogramas tradicionales proveen una medición de la componente del campo magnético a lo largo de la línea de visión. Esta medición es transformada en componente radial asumiendo que el campo es fundamentalmente radial en las cercanías de la fotósfera. Series de magnetogramas individuales tomados durante una rotación completa son combinados en los denominados magnetogramas sinópticos, que proveen una descripcción de la la superficies solar en su totalidad. Los magnetogramas sinópticos pueden utilizarse para extrapolar el campo magnético en la corona solar.
+
+
+
+
+
+
