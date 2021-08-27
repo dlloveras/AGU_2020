@@ -8,7 +8,8 @@
 %\usetheme{Malmoe}
 %\usetheme{CambridgeUS}
 %\usetheme{Hannover}
-
+\usepackage{watermark}
+\usepackage{eso-pic}
 % Tema Simple
 \usetheme[height=0.35cm]{Madrid}
 
@@ -39,13 +40,13 @@
 %\input{Definiciones.charla}
 
 
-\vspace*{-0.75 cm}
-\title[Corona Solar 3D]{\bf Reconstrucci\'on tomogr\'afica y modelado MHD-3D de la baja corona: m\'inimo solar actual (WHPI)}
+\vspace*{-1 cm}
+\title[Corona Solar 3D]{\bf Three-Dimensional Tomographic Reconstruction and MHD Modeling of WHPI target rotations CR-2219 and CR-2223}
 \author[D. Lloveras]
        {{\bf Diego G. Lloveras}\inst{1}\\
        \vskip 0.1cm
        {
-       D.G. Lloveras\inst{1}, A.M. V\'asquez\inst{1}, F.A. Nuevo\inst{1}, N. Sachdeva\inst{2}, W. Manchester IV\inst{2}, B. Van der Holst\inst{2} \& R. Frazin\inst{2}
+       A.M. V\'asquez\inst{1}, F.A. Nuevo\inst{1}, N. Sachdeva\inst{2}, W. Manchester IV\inst{2},\\ B. Van der Holst\inst{2}, R. Frazin\inst{2}, P. Lamy\inst{3}, \& J. Wojak\inst{4}
        }
       % \\
        }
@@ -60,16 +61,25 @@
   \inst{2}
  % Dept. of Atmospheric, Oceanic and Space Sciences \textcolor{blue}{(AOSS)}\\
   Dept. of Climate and Space Sciences and Engineering \textcolor{blue}{(CLaSP)}\\
-  University of Michigan, Ann Arbor - Michigan, USA
+  University of Michigan, Ann Arbor - Michigan, USA\\
   %\salto
-  %\vspace{-0.5cm}
+  \vspace{0.15cm}
+  \inst{3}
+  %Laboratoire d’Astrophysique de Marseille \textcolor{blue}{(LAM)}\\
+  Laboratoire Atmosphères, Milieux, Observations Spatiales \textcolor{blue}{(LATMOS)}\\
+  Paris, France\\
+   \vspace{0.15cm}
+  \inst{4}
+  Institut Fresnel \\
+  Aix-Marseille Université, Marseille, France
+   \vspace{-0.25cm}
   \begin{center}
-\framebox{\includegraphics[height=0.15\linewidth]{new_figs/logo_IAFE.eps}}
+\framebox{\includegraphics[height=0.08\linewidth]{new_figs/logo_IAFE.eps}}
 %\framebox{\includegraphics[height=0.1\linewidth]{logo_LMSAL.eps}}
-\framebox{\includegraphics[height=0.15\linewidth]{new_figs/logo_clasp2.eps}}
-\framebox{\includegraphics[height=0.15\linewidth]{new_figs/aaa_logo.png}}
-\salto
-%{\bf AAA \textbar \ Septiembre-2019 \textbar \ Viedma, Argentina}
+\framebox{\includegraphics[height=0.08\linewidth]{new_figs/logo_clasp2.eps}}
+%\framebox{\includegraphics[height=0.1\linewidth]{new_figs/aaa_logo.png}}
+%\salto
+%{\bf AGU \textbar \ December-2020 \textbar \ San Francisco, USA}
 \end{center}
   }
 
@@ -81,13 +91,11 @@
 %-------------------> INTRODUCCION <----------------------------------------------------
 
 \frame{
-\titulo{Corona Solar y la relación Sol Tierra}
+\titulo{Solar Corona and Sun-Earth relation}
 \scriptsize
 \framebox{\includegraphics[width=\linewidth]{new_figs/Sun-Earth.eps}}
 \begin{center}
-La observación y el modelado de la Corona solar resulta de gran relevancia para la comprensión de la relación Sol-Tierra, ya que en la Corona es donde el viento solar es calentado, acelerado y tienen lugar eventos impulsivos como eyecciones de masa coronal, flares, etc.
-
-%Being the place where the solar wind is heated and accelerated, and impulsive events as solar flares and coronal mass ejections are released, observation and modeling of the Solar Corona is of great relevance to advance our understanding of the Sun-Earth environment.
+Being the region where the solar wind is heated and accelerated, and impulsive events as solar flares and coronal mass ejections are released, observation and modeling of the Solar Corona is of great relevance to advance our understanding of the Sun-Earth environment.
 %Advancement of physical models is in need of 3D information of the coronal fundamental parameters ${\bf B}, N_e, T_e$ and chemical abundances.
 \end{center}
 }
@@ -125,7 +133,7 @@ La observación y el modelado de la Corona solar resulta de gran relevancia para
 \end{comment}
 %---------------------------------------------------------------------------
 \frame{
-\titulo{Corona Solar}
+\titulo{Solar Corona}
 \footnotesize
 \vspace{-0.25cm}
 \begin{center}
@@ -135,16 +143,16 @@ La observación y el modelado de la Corona solar resulta de gran relevancia para
  Corona (T $\approx 1-10$\, MK, $n \approx 10^{10-7}\ {\rm cm}^{-3}$)
 \begin{itemize}
  \vspace{0.5cm}
- \item La baja corona es ópticamente delgada y emite eficientemente en el rango EUV.\\
- %\item The corona is \azul{optically thin} in the UV, \azul{EUV}, X, \azul{WL} ranges.\\
-%\item Images are thus 2D projections of the underlying 3D emitting structure.
+% \item La baja corona es ópticamente delgada y emite eficientemente en el rango EUV.\\
+ \item The corona is \azul{optically thin} in the UV, \azul{EUV}, X, \azul{VL} ranges.\\
+\item Images are thus 2D projections of the underlying 3D emitting structure.
 % \salto
 % \item El plasma emisor es governado por el \azul{campo magn\'etico coronal} congelado a la materia, para el cual {no se dispone de mediciones} (que son fotosf\'ericas).
  \mediosalto
 %\item El avance de los modelos físicos necesitan información 3D coronal de parámetros fundamentales: $N_e$, $T_e$ y abundancias químicas.
 
 %\item Las imágenes son proyecciones 2D de estructuras emisoras 3D.
-%\item Advancement of physical models is in need of 3D information of the coronal fundamental parameters ${\bf B}, N_e, T_e$ and chemical abundances.
+\item Advancement of physical models is in need of 3D information of the coronal fundamental parameters ${\bf B}, N_e, T_e$ and chemical abundances.
 \end{itemize}
 
 }
@@ -163,21 +171,25 @@ La observación y el modelado de la Corona solar resulta de gran relevancia para
 %}
 
 \frame{
+\titulo{Solar Wind}
 \footnotesize
 \vskip -0.3cm
 \begin{columns}
 \column{0.7\textwidth}
 \begin{center}
-\includegraphics[width=0.9\textwidth]{new_figs/mezcla_pfss_ulysses.pdf}
+\includegraphics[width=0.82\textwidth]{new_figs/mezcla_pfss_ulysses.pdf}
 \end{center}
 \column{0.3\textwidth}
 %\vskip -0.3cm
 \begin{itemize}
-  \item El plasma fluye por las líneas abiertas
+  %\item El plasma fluye por las líneas abiertas
+  \item The plasma flows along open magnetic lines
   \vskip 0.3cm
-  \item Líneas abiertas de alta latitud presentan régimen rápido y de baja densidad.
+  %\item Líneas abiertas de alta latitud presentan régimen rápido y de baja densidad.
+  \item High-latitude open lines exhibit a fast and low-density regime
   \vskip 0.3cm
-  \item Líneas abiertas de baja latitud presentan régimen lento y de alta densidad.
+  %\item Líneas abiertas de baja latitud presentan régimen lento y de alta densidad.
+  \item Near-streamer open lines exhibit a slow and high density regime
 \end{itemize}
  \vskip 1.5cm
 
@@ -189,16 +201,16 @@ La observación y el modelado de la Corona solar resulta de gran relevancia para
 \end{columns}
 }
 %------------------------------
+\begin{comment}
 \frame{
-\titulo{Tomografía Solar Rotacional (TSR)}
+\titulo{Solar Rotational Tomography (SRT)}
 \footnotesize
 \vspace{-0.2cm}
 \begin{center}
 %The corona is \azul{optically thin} in the UV, \azul{EUV}, X, \azul{WL} ranges.\\
 %By inverting for the \azul{3D EUV emissivity from time series of images} it allows inferring the 3D $N_e$ and $T_e$ of the global corona.
-%The object of study is the solar corona.\\
-%The solar rotation provides the necessary 360\deg view angles.
-El objeto de estudio es la Corona Solar.\\
+The object of study is the solar corona.\\
+The solar rotation provides the necessary 360\deg view angles.
 \end{center}
 %\vspace{-1.5cm}
 %\begin{columns}
@@ -259,8 +271,58 @@ Long = 90\deg\\
 \end{center}
 \end{columns}
 }
-
+\end{comment}
 %-----------------------------------
+
+\frame{
+\titulo{Solar Rotational Tomography (SRT)}
+\footnotesize
+\vspace{-0.2cm}
+\begin{center}
+%The corona is \azul{optically thin} in the UV, \azul{EUV}, X, \azul{WL} ranges.\\
+%By inverting for the \azul{3D EUV emissivity from time series of images} it allows inferring the 3D $N_e$ and $T_e$ of the global corona.
+The object of study is the solar corona.\\
+The solar rotation provides the necessary 360\deg view angles.
+\end{center}
+%\vspace{-1.5cm}
+\begin{columns}
+%\vspace{-1cm}
+\column{0.6\textwidth}
+\begin{itemize}
+%\item  \azul{Corona-K:} Thomson scattering of photospheric  \azul{white light (WL)}. Data gathered with WL coronographs.
+%\item \azul{SRT-WL} $\rightarrow$ 3D $\AvgNe$.
+%\item 1st SRT-WL: Altschuler \& Perry (1972)
+\item \azul{Corona-E:} True coronal emission by ions UV, \azul{EUV} and X.
+\item \azul{SRT-EUV} $\rightarrow$ 3D EUV emissivity  $\rightarrow$\\
+3D $\AvgNE2$ and $\AvgTe$
+\item 1st SRT-EUV: Vásquez et al. 2009; Frazin et al. 2009
+\end{itemize}
+\vskip 1cm
+\begin{itemize}
+%\item \azul{Corona-E:} True coronal emission by ions UV, \azul{EUV} and X.
+%\item \azul{SRT-EUV} $\rightarrow$ 3D EUV emissivity  $\rightarrow$\\
+%3D $\AvgNE2$ and $\AvgTe$
+%\item 1st SRT-EUV: Vásquez et al. 2009; Frazin et al. 2009
+\item \azul{Corona-K:} Thomson scattering of photospheric  \azul{visible light (VL)}.% Data gathered with WL coronographs.
+\item \azul{SRT-VL} $\rightarrow$ 3D $\AvgNe$.
+\item 1st SRT-VL: Altschuler \& Perry (1972)
+\end{itemize}
+\column{0.4\textwidth}
+%\vskip 1.2cm
+\begin{center}
+%\azul{White Light}
+%\includegraphics[height=0.6\textwidth]{new_figs/LASCOC2_comet.pdf}
+%\mediosalto
+\azul{EUV} \\
+\includegraphics[height=0.6\textwidth]{new_figs/banda193_4.pdf}
+\mediosalto
+\azul{Visible Light}
+\includegraphics[height=0.6\textwidth]{new_figs/LASCOC2_comet.pdf}
+\end{center}
+\end{columns}
+}
+%--------------------------------------
+
 \begin{comment}
 \frame{ 
 \vspace{-0.35cm}
@@ -303,11 +365,11 @@ $\azul{I_\mathrm{b}} = \azul{
 \end{comment}
 %-------------------------------
 \frame{
-\titulo{Temperaturas características de la Corona Solar}
+\titulo{Characteristic Temperatures of the Solar Corona}
 \footnotesize
 \begin{center}
 %EIT/SOHO y EUVI/STEREO \azul{3 bands:} \azul{0.5-2.75 MK}\\
-{AIA/SDO} \azul{4 bandas:} \azul{0.5-4.0 MK}\\
+{AIA/SDO} \azul{4 bands:} \azul{0.5-4.0 MK}\\
 \begin{figure}[ht]
 \figu{\includegraphics[height=0.375\linewidth]{new_figs/panel.eps}}
 \figu{\includegraphics[height=0.375\linewidth]{new_figs/qkl.eps}}
@@ -327,14 +389,18 @@ $\left< N_e^2\right> = \int \mathrm{d} T \ \, \rojo{{\sf LDEM}(T)}$\\
 %---------------------------------
 \frame{ 
 \vspace{-0.05cm}
-\titulo{Mapas de carrington tomográficos}
+\titulo{Tomographic results}
+%\vskip -0.9cm
 \footnotesize
-
 \begin{center}
 %  Mínimo solar 2009 - Extreme UltraViolet Imager\\
-{\includegraphics[width=0.6\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1025_Rsun_mapoc_awsom.pdf}}
+%{\includegraphics[width=0.45\textwidth]{new_figs/map_Ne_CR2219_DEMT-AIA_H1_L_8_3_4_r3d_multistart_1_025_Rsun.jpg}}
+{\includegraphics[width=0.49\textwidth]{new_figs/map_Ne_CR2219_DEMT-AIA_H1_L834_r3d_multistart_1025_Rsun_mapoc_awsom_cocent.jpg}}
+{\includegraphics[width=0.49\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1025_Rsun_mapoc_awsom.pdf}}\\
 %{\includegraphics[width=0.46\textwidth]{new_figs/Ne_1025_CR2081.pdf}}
-{\includegraphics[width=0.6\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1105_Rsun_mapoc_awsom.pdf}}\\
+{\includegraphics[width=0.49\textwidth]{new_figs/map_Ne_CR2219_DEMT-AIA_H1_L834_r3d_multistart_1105_Rsun_mapoc_awsom_cocent.jpg}}
+%{\includegraphics[width=0.45\textwidth]{new_figs/map_Ne_CR2219_DEMT-AIA_H1_L_8_3_4_r3d_multistart_1_105_Rsun.jpg}}
+{\includegraphics[width=0.49\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1105_Rsun_mapoc_awsom.pdf}}\\
 %{\includegraphics[width=0.46\textwidth]{new_figs/Tm_1025_CR2081.pdf}}\\
 \end{center}
 %(Lloveras et al. 2017, Solar Physics) $\rightarrow$ Incertezas sistemáticas en DEMT $\sim 10 \%$ \\
@@ -353,12 +419,16 @@ $\left< N_e^2\right> = \int \mathrm{d} T \ \, \rojo{{\sf LDEM}(T)}$\\
 %  \item Sachdeva et al. 2019, APJ. (AIA, Lasco C2, IPS, OMNI)
 %\end{itemize}
 
-\titulo{Modelo MHD-3D AWSoM}
+\titulo{MHD-3D AWSoM model}
 \begin{itemize}
-  \item MHD-3D: Alfvén Wave Solar Model (AWSoM), forma parte del Space Weather Modeling Framework (SWMF)
-\item Calentamiento coronal dado por disipasión ondas de Alfvén \\(van der Holst et al.,  2014)
-\item Abarca desde la cromosfera hasta 1 UA
-\item Magnetograma sinóptico como condición de contorno (ADAPT-GONG)
+  %\item MHD-3D: Alfvén Wave Solar Model (AWSoM), forma parte del Space Weather Modeling Framework (SWMF)
+  %\item Calentamiento coronal dado por disipasión ondas de Alfvén \\(van der Holst et al.,  2014)
+  %\item Abarca desde la cromosfera hasta 1 UA
+  %\item Magnetograma sinóptico como condición de contorno (ADAPT-GONG)
+  \item MHD-3D: Alfvén Wave Solar Model (AWSoM), within Space Weather Modeling Framework (SWMF)
+  \item Coronal heating given by dissipation of Alfvén waves \\(van der Holst et al.,  2014)
+  \item Covers from the chromosphere up to 1 AU
+  \item Synoptic Magnetogram as Boundary Condition (ADAPT-GONG)
 \end{itemize}
 
 \begin{columns}
@@ -374,88 +444,144 @@ Lloveras et al. 2020, SolPhys.\\
 \end{columns}
 }
 
-
 %-----------------------------------
 \frame{
-%\titulo{}
+\titulo{Validating AWSoM runs with VL-Tomography}
+%\begin{center}
+\begin{columns}
+\column{0.8\textwidth}
 \begin{center}
-\includegraphics[width=0.65\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_1065_Rsun_mapoc_awsom.pdf}\\
-\includegraphics[width=0.65\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_mapoc_awsom.pdf}
+\includegraphics[width=0.74\textwidth]{new_figs/map_Ne_awsom_2223_realization10_extended_new_5_985_Rsun.png}\\
+\includegraphics[width=0.74\textwidth]{new_figs/map_x_LASCOC2pB_CR2223_24hr-Cadence_Rmin2_25_Rmax8_25_IRmin2_5_IRmax6_0_60x60x120_BF4_r3D_l1_e-4_6_000_Rsun.png}
+\end{center}
+\column{0.2\textwidth}
+\begin{center}
+{\footnotesize
+Arge et al. (2010)\\
+Hickmann et al. (2015)}
+\end{center}
+\end{columns}
+}
+%-----------------------------------
+\frame{
+\titulo{Solar Wind - AWSoM}
+\begin{center}
+%\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2219_cocent_extended_1065_Rsun_mapoc_awsom_cocent.jpg}
+%\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_1065_Rsun_mapoc_awsom.pdf}\\
+
+%\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2219_cocent_extended_5995_Rsun_mapoc_awsom_cocent.jpg}
+%\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_mapoc_awsom.pdf}
 %map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_2.pdf}
+\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2219_cocent_extended_1065_Rsunsom_.jpg}
+\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_1065_Rsunsom_.jpg}
+
+\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2219_cocent_extended_5995_Rsunsom_.jpg}
+\includegraphics[width=0.49\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_5995_Rsunsom_.jpg}
 \end{center}
 }
 
 %---------------------------------
-\begin{comment}
-\frame{ 
+%\begin{comment}
+\frame{
+\titulo{Avg Latitudinal Variation: DEMT and AWSoM} 
+%\includegraphics[width=0.3\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1025_Rsun_mapoc_awsom.pdf}
+%\includegraphics[width=0.1\textwidth]{new_figs/pfss_der.pdf}
+%\includegraphics[width=0.3\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_mapoc_awsom.pdf}
 \begin{columns}
-\column{0.4\textwidth}
+\column{0.5\textwidth}
 \begin{center}
-\includegraphics[width=0.99\textwidth]{new_figs/map_Ne_CR2223_DEMT-AIA_H1_L733_r3d_multistart_1025_Rsun_mapoc_awsom.pdf}\\
-% \vspace{1.5cm}
-%\raggedright
-\includegraphics[width=0.3\textwidth]{new_figs/pfss_der.pdf}
-\includegraphics[width=0.99\textwidth]{new_figs/map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_mapoc_awsom.pdf}
-%map_Vr_awsom_2223_realization10_extended_new_5945_Rsun_2.pdf}
+\textcolor{blue}{\large{CR2219}}\\
+\includegraphics[width=0.99\textwidth]{new_figs/Perfil_Ne_demt_2219_basal_1025.pdf}\\
+\includegraphics[width=0.99\textwidth]{new_figs/Perfil_Vr_awsom_2219_6rs_5995.pdf}\\
 \end{center}
-\column{0.6\textwidth}
+\column{0.5\textwidth}
 \begin{center}
+\textcolor{blue}{\large{CR2223}}\\
 \includegraphics[width=0.99\textwidth]{new_figs/Perfil_Ne_demt_2223_basal_1025.pdf}\\
 \includegraphics[width=0.99\textwidth]{new_figs/Perfil_Vr_awsom_2223_6rs_5995.pdf}\\
 \end{center}
-
 \end{columns}
+
+%\begin{columns}
+%\column{0.3\textwidth}
+%\begin{center}
+%\includegraphics[width=0.8\textwidth]{new_figs/pfss_mitad.png}
+%\end{center}
+%\column{0.3\textwidth}
+%\includegraphics[width=0.9\textwidth]{new_figs/map_Ne_CR2219_DEMT-AIA_H1_L834_r3d_multistart_1025_Rsun_mapoc_awsom_cocent.jpg}
+%\column{0.3\textwidth}
+%\includegraphics[width=0.9\textwidth]{new_figs/map_Vr_awsom_2219_cocent_extended_5995_Rsunsom_.jpg}
+%\end{columns}
 }
-\end{comment}
+%\end{comment}
 %---------------------------------
-\frame{ 
-\begin{center}
-\includegraphics[width=0.9\textwidth]{new_figs/compost.pdf}\\
-\end{center}
-}
+%\frame{ 
+%\begin{center}
+%\includegraphics[width=0.9\textwidth]{new_figs/compost.pdf}\\
+%\end{center}
+%}
 %---------------------------------
 
 \frame{ 
+\begin{columns}
+\column{0.2\textwidth}
+\vspace{3cm}
+\textcolor{blue}{\large{CR2219}}
+\vspace{0.3cm}
+\textcolor{blue}{\large{ \, CR2223}}\\
+\column{0.8\textwidth}
 \begin{center}
-\includegraphics[width=0.99\textwidth]{new_figs/scatter_plot_nedemt_vs_vrxsignoBrCR2223_AWSoM_DEMT_ca_colbarlat.pdf}\\
+\includegraphics[width=0.8\textwidth]{new_figs/scatter_plot_nedemt_vs_vrxsignoBrCR2219_AWSoM_DEMT_ca_colbarlat.jpg}\\
+\includegraphics[width=0.8\textwidth]{new_figs/scatter_plot_nedemt_vs_vrxsignoBrCR2223_AWSoM_DEMT_ca_colbarlat.jpg}\\
 \end{center}
-\begin{itemize}
-\item Determinamos tomograficamente y en forma cuantitativa, por primera vez,   propiedades basales de ambas componentes del viento solar
-\end{itemize}
+\end{columns}
 }
 %--------------------------------------------------------------------------------
 
 \frame{
-\vspace{-0.05cm}
-%\titulo{Trabajo futuro}
+\vspace{0.5cm}
+\titulo{Final comments}
 %\footnotesize
-\Large{\azul{Comentarios finales}}
+%\Large{\azul{Final comments}}
 \normalsize{
 \begin{itemize}
-\item La Tomografía Solar Rotacional es actualmente la única técnica observacional que permite generar mapas 3D globales de Ne y Te (validar modelos MHD-3D).
+\item Solar Rotational Tomography is currently the only observational technique that allows construction of global 3D maps of Ne and Te %(validate MHD-3D models).
+%\item La Tomografía Solar Rotacional es actualmente la única técnica observacional que permite generar mapas 3D globales de Ne y Te (validar modelos MHD-3D).
 %\item Mediante el trazado de los resultados correlacionamos las propiedades físicas derivadas por tomografía en la base coronal para las líneas magnéticas de las componentes rápida/lenta del viento solar del modelo MHD. Es el primer estudio de este tipo.
-\item Trazando los resultados pudimos correlacionar las propiedades físicas en la base coronal obtenidas con la tomografia con las componentes rapida/lentas del viento solar dadas por el modelo MHD para cada línea magnéticamente abierta. 
+\item The MHD-3D model was validated with VL and EUV tomography
+
+
+\item By tracing the results we were able to correlate the physical properties at the coronal base obtained with the tomography with the fast/slow components of the solar wind given by the MHD model for each magnetically open line.
+%\item Trazando los resultados pudimos correlacionar las propiedades físicas en la base coronal obtenidas con la tomografia con las componentes rapida/lentas del viento solar dadas por el modelo MHD para cada línea magnéticamente abierta. 
 %\item Determinamos tomograficamente y en forma cuantitativa 3D, por primera vez,   propiedades basales del viento solar rápido/lento.
+%\item Determinamos tomograficamente y en forma cuantitativa, por primera vez,   propiedades basales de ambas componentes del viento solar
+\item For the first time, basal properties of both components of the SW were quantitatively determined using tomography.
+%We determined for the first time tomographically and quantitatively the basal properties of both components of the solar wind.\\
+\vspace{1cm}
+\item We will carry out the same type of statistical analysis along field lines comparing their model terminal properties at 1 AU with their tomographic results in the inner corona.
 
 \end{itemize}
 }
-\vspace{1cm}
-\Large{\azul{Trabajo futuro}}
-\normalsize{
-\begin{itemize}
-\item Nuevos modelados MHD utilizando magnetogramas co-centrados temporalmente con imágenes EUV, para CR-2219 y CR-2223.\\
-\item Agregado de propiedades terminales.
-\item Incorporación de tomografía utilizando imágenes de Lasco-C2 (LAM) para cubrir el rango $2.5-6.0$ {R$_{SUN}$}.
-\end{itemize}
-}
+%\vspace{1cm}
+%\Large{\azul{Future Work}}
+%\normalsize{
+%\begin{itemize}
+%\item New MHD runs using magnetograms temporally co-centered with EUV images, for CR-2219 and CR-2223
+%\item
+
+%\item Nuevos modelados MHD utilizando magnetogramas co-centrados temporalmente con imágenes EUV, para CR-2219 y CR-2223.\\
+%\item Agregado de propiedades terminales.
+%\item Incorporación de tomografía utilizando imágenes de Lasco-C2 (LAM) para cubrir el rango $2.5-6.0$ {R$_{SUN}$}.
+%\end{itemize}
+
 
 %\item Por debajo de $r \sim 1.05 \ {\rm R_{SUN}}$ el modelo AWSoM no es capaz de modelar la baja corona (region de transicion extendida). 
 %\item Sobre $r \sim 1.05 \ {\rm R_{SUN}}$ en Streamer y Agujero Coronal: $T_e$ y $N_e$ en acuerdo dentro del $\sim 30 \%$.
 %\item Realizar una rotación mas cercana al mínimo $\rightarrow$ Whole Heliosphere and Planetary Interactions (WHPI)
 %\item Implementación de Tomografía Multi Instrumental (EUV: EUVI, AIA; Luz Blanca: K-cor, Lasco-C2;  Coronal Multichannel Polarimeter (CoMP). 
 
-
 }
+
 
 
 

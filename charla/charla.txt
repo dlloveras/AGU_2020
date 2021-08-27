@@ -2,6 +2,7 @@
 Hola a todos, mi nombre es Diego Lloveras. Estoy haciendo el doctorado en el IAFE, en el grupo de física solar y hoy les voy a contar parte del trabajo que estamos haciendo con Alberto Vasquez, Federico Nuevo, tambien del iafe, en un marco de colaboracion con el grupo de fisica espacial de la universidad de Michigan, en particular: sachdeva, manchester, van der holst y frazin.
 
 Nos encontramos en este momento transitando un mínimo de actividad solar. Durante estos períodos, el sol se encuentra en su estado mas relajado y simple, y nos ofrece una muy buena oportunidad para estudiar y entender a gran escala la relacion sol-tierra. En este contexto se lleva a cabo la campaña de colaboracion (Interacciones planetarias y heliosfera completas, WHPI por sus siglas en ingles) que apunta a nuclear y compartir modelos y observaciones del sistema sol-heliosfera. Dentro de este marco utilizamos una reconstruccion tomografica y un modelado MHD para determinar propiedades del viento solar rapido y lento en la baja corona.
+
 *2)Relacion Sol-Tierra
 Nos encontramos en una era espacial, por lo tanto la observación y el modelado de la Corona solar resultan de gran relevancia para el entendimiento y por lo tanto la  prediccion del clima espacial, ya que en la Corona es donde el viento solar es calentado, acelerado y ademas tienen lugar eventos impulsivos como CMEs que afectan directamente al medio interplanetario y en particular pueden afectar el campo geomagnetico terrestre.
 
@@ -25,6 +26,7 @@ Y a medida que nos acercamos al plano ecuatorial, encontramos viento solar lento
 Los mecanismos que generan el viento solar lento son un tema abierto, por ejemplo en este paper de Suess se propusieron varias posibilidades asociadas a inestabilidades hidrodinamicas, desprendimiento de plasma en la cuspide del streamer y flujos continuos en las zonas cercanas al streamer.
 
 Lo que nos propusimos en este trabajo es relacionar para cada una de estas lineas abiertas, la velocidad terminal dada por un modelo MHD con la densidad basal dada por la tomografia.
+
 *5)Tomografia solar rotacional (tecnica DEMT)
 La tomografia solar rotacional, nos permite determinar propiedades termodinamicas en la baja corona. La tecnica toma una serie temporal de imagenes de una rotacion y permite calcular la emisividad en una grilla 3D, luego calculamos la medida de emision diferencial en cada una de esas celdas y finalmente obtenemos densidad y temperatura en una grilla 3D.
 
